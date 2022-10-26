@@ -1,24 +1,35 @@
-# README
+## 映画をレビューするサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+バックエンドをテストするのためのプロジェクトです
 
-Things you may want to cover:
+- Ruby version: see [.ruby-version](.ruby-version)
 
-* Ruby version
+- システムの設計：see [Design](./docs/DESIGN.md)
 
-* System dependencies
+### 事前準備
 
-* Configuration
+- mysql 8.0.31 をインストールする
+- DB を作る
 
-* Database creation
+### バックエンド環境構築
 
-* Database initialization
+- gem インストール
+  ```
+  bundle install
+  ```
+- サーバを起動する
+  ```
+  bundle exec rails s
+  ```
+- テストする
+  ```
+  bundle exec test test/
+  ```
 
-* How to run the test suite
+### フロントエンド環境構築
 
-* Services (job queues, cache servers, search engines, etc.)
+see [client/README.md](/client/README.md)
 
-* Deployment instructions
-
-* ...
+=================
+author: Le Thanh Binh (レ　タイン　ビン)
+contact: binh97.lt@gmail.com
