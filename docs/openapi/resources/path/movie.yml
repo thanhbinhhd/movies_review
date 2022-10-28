@@ -1,0 +1,108 @@
+get:
+  summary: index
+  tags:
+    - API::Movies
+  description: 映画一覧を取得する
+  parameters:
+    - in: query
+      name: search
+      description: 映画に関するキーワード
+      schema:
+        type: string
+      example:
+        search: '映画名'
+  response:
+    "200":
+      description: 映画一覧を取得できること
+      content:
+        application/json:
+          movies:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: number
+                name:
+                  type: string
+                thumbnail:
+                  type: string
+                description:
+                  type: string
+              required:
+                - id
+                - name
+                - thumbnail
+                - description
+    "400":
+      description: パラメーターが不正確
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/invalid_params"
+    "500":
+      description: server internal error
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/internal_server_error"
+get:
+  summary: show
+  tags:
+    - API::Movies
+  description: 映画詳細を取得する
+  parameters:
+    - in: path
+      name: id
+      description: 映画のID
+      schema:
+        type: number
+      example:
+        search: 1
+  response:
+    "200":
+      description: 映画を取得できること
+      content:
+        application/json:
+          movies:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: number
+                name:
+                  type: string
+                thumbnail:
+                  type: string
+                description:
+                  type: string
+                director:
+                  type: string
+                actor:
+                  string
+                year:
+                  string
+              required:
+                - id
+                - name
+                - thumbnail
+                - description
+                - director
+                - actor
+                - year
+    "400":
+      description: パラメーターが不正確
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/invalid_params"
+    "404":
+      description: 映画を見つけられないこと
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/not_found"
+    "500":
+      description: server internal error
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/internal_server_error"
+
+    

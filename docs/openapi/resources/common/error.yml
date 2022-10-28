@@ -1,0 +1,40 @@
+not_found:
+  type: object
+  properties:
+    message:
+      type: string
+      example: not found
+    required:
+      - message
+forbidden:
+  type: object
+  properties:
+    message:
+      type: string
+      example: forbidden
+    required:
+      - message
+invalid_params:
+  type: object
+  properties:
+    message:
+      type: string
+      example: invalid params
+    required:
+      - message
+unprocessable_entity:
+  type: object
+  properties:
+    message:
+      type: string
+      example: unprocessable entity
+    required:
+      - message
+internal_server_error:
+  type: object
+  properties:
+    message:
+      type: string
+      example: invalid params
+    required:
+      - message
