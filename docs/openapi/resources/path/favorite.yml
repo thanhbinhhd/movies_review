@@ -1,0 +1,75 @@
+get:
+  summary: index
+  tags:
+    - API::Favorites
+  description: 映画をボックマークする
+  response:
+    "200":
+      description: ok
+      content:
+        application/json:
+          movies:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: number
+                name:
+                  type: string
+                thumbnail:
+                  type: string
+                description:
+                  type: string
+              required:
+                - id
+                - name
+                - thumbnail
+                - description
+    "400":
+      description: bad request
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/invalid_params"
+    "500":
+      description: server internal error
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/internal_server_error"
+post:
+  summary: create
+  tags:
+    - API::Favorites
+  description: 映画をブックマークする
+  parameters:
+    - in: path
+      name: id
+      description: 映画のID
+      schema:
+        type: number
+      example:
+        search: 1
+  response:
+    "201":
+      description: created
+      content:
+        application/json:
+          id:
+            type: number
+    "400":
+      description: bad request
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/invalid_params"
+    "404":
+      description: not found
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/not_found"
+    "500":
+      description: server internal error
+      content:
+        application/json:
+          schema: $ref: "../common/error.yml#/internal_server_error"
+
+    

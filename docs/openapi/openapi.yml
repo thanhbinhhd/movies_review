@@ -1,0 +1,17 @@
+---
+openapi 3.0.3
+info:
+  title: ml-backend-test-thanhbinhhd
+  version 1.0.0
+paths:
+  /movies:
+    $ref: ./resources/paths/movie.yml
+  /movies/{id}:
+    $ref: ./resources/paths/movie.yml
+  /favorites:
+    $ref: ./resources/paths/favorite.yml
+  /favorites/{id}:
+    $ref: ./resources/paths/favorite.yml
+
+
+
