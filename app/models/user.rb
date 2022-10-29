@@ -11,4 +11,9 @@ class User < ApplicationRecord
 
     BCrypt::Password.new(encrypted_password) == password.to_s
   end
+
+  def password=(new_password)
+    @password = new_password
+    self.encrypted_password = BCrypt::Password.create(@password)
+  end
 end

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create(:user, encrypted_password: BCrypt::Password.create('user_password')) }
+  let(:user) { create(:user, password: 'user_password') }
   describe 'valid_password?' do
     it 'password が nil 場合、 false を返すこと' do
       expect(user.valid_password?(nil)).to be false

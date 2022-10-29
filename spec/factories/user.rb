@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :user do
     name { 'user name' }
     avatar { nil }
-    encrypted_password { BCrypt::Password.create('password') }
+    password { 'password' }
   end
 end
