@@ -12,7 +12,7 @@ export const initState: State = {
 };
 
 @Injectable()
-export class MoviesListStore extends ComponentStore<State> {
+export class MoviesIndexStore extends ComponentStore<State> {
   constructor() {
     super(initState);
   }

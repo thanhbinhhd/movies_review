@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { MoviesApi } from '../../../../api/movies';
-import { MoviesListStore } from './movies-list.store';
+import { MoviesIndexStore } from './movies-index.store';
 
 @Injectable()
-export class MoviesListUsecase {
+export class MoviesIndexUsecase {
   constructor(
     private readonly movieApi: MoviesApi,
-    private readonly store: MoviesListStore
+    private readonly store: MoviesIndexStore
   ) {}
 
   async getMovies(): Promise<void> {

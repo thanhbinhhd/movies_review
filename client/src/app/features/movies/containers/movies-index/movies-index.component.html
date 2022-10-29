@@ -1,10 +1,6 @@
 <ng-container *ngIf="moviesList$ | async as moviesList; else movieNotFound">
   <ng-container *ngIf="moviesList.length > 0; else movieNotFound">
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4">
-      <ng-container *ngFor="let movie of moviesList">
-        <app-movie-card></app-movie-card>
-      </ng-container>
-    </div>
+    <app-movies-list [movies]="moviesList"></app-movies-list>
   </ng-container>
 </ng-container>
 <ng-template #movieNotFound>

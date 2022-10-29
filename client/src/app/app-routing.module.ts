@@ -6,9 +6,7 @@ const routes: Routes = [
   {
     path: 'movies',
     loadChildren: () =>
-      import('./features/movies-list/movies-list.module').then(
-        (m) => m.MoviesListModule
-      ),
+      import('./features/movies/movies.module').then((m) => m.MoviesListModule),
   },
 ];
 
