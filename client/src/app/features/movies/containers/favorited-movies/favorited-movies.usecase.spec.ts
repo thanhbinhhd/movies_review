@@ -1,23 +1,25 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { MoviesApi } from 'src/app/api/movies';
 import { MoviePreview } from 'src/app/shared/movie/domain/movie';
-import { MoviesIndexStore } from './movies-index.store';
-import { MoviesIndexUsecase } from './movies-index.usecase';
+import { FavoritedMoviesStore } from './favorited-movies.store';
+import { FavoritedMoviesUsecase } from './favorited-movies.usecase';
 
-describe('MoviesIndexUsecase', () => {
-  let store: MoviesIndexStore;
-  let usecase: MoviesIndexUsecase;
+describe('FavoritedMoviesUsecase', () => {
+  let store: FavoritedMoviesStore;
+  let usecase: FavoritedMoviesUsecase;
   let api: MoviesApi;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [MoviesIndexStore, MoviesIndexUsecase],
+      providers: [FavoritedMoviesStore, FavoritedMoviesUsecase],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
-    store = TestBed.inject(MoviesIndexStore);
-    usecase = TestBed.inject(MoviesIndexUsecase);
+    store = TestBed.inject(FavoritedMoviesStore);
+    usecase = TestBed.inject(FavoritedMoviesUsecase);
     api = TestBed.inject(MoviesApi);
   });
 
@@ -41,7 +43,7 @@ describe('MoviesIndexUsecase', () => {
           thumbnail: 'thumbnail.png',
         },
       ];
-      spyOn(api, 'getMoviesList').and.returnValue(of(moviesList));
+      spyOn(api, 'getFavoritedMovies').and.returnValue(of(moviesList));
 
       await usecase.getMovies();
       store.moviesList$.subscribe((value) => {

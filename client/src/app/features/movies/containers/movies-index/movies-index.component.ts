@@ -8,7 +8,7 @@ import { MoviesIndexUsecase } from './movies-index.usecase';
   styleUrls: ['./movies-index.component.scss'],
   providers: [MoviesIndexStore, MoviesIndexUsecase],
 })
-export class MoviesListComponent implements OnInit {
+export class MoviesIndexComponent implements OnInit {
   constructor(
     private usecase: MoviesIndexUsecase,
     private store: MoviesIndexStore

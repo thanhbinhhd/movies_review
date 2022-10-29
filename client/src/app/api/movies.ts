@@ -19,4 +19,8 @@ export class MoviesApi {
       `${apiUrl}/movies?search=${searchKey}`
     );
   }
+
+  getFavoritedMovies(): Observable<MoviePreview[]> {
+    return this.http.get<MoviePreview[]>(`${apiUrl}/favorites`);
+  }
 }
