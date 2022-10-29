@@ -1516,6 +1516,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@ngrx/component-store@^14.3.2":
+  version "14.3.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-14.3.2.tgz#0c97763416c1d7416cc529f310ad224b1107a92f"
+  integrity sha512-qdh0COdMU6LmrycoIIZg678DbsNXWR05Y6pVz+t7/LszGC4+UGuXoS6CR8gSNGGMWwLVw5yh+5MXsjuqTvp3ww==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@14.2.6":
   version "14.2.6"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-14.2.6.tgz#74866e04d380b36e30844d10e8eb3694b4032d09"
@@ -6467,7 +6474,7 @@ tree-kill@1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-tslib@2.4.0, tslib@^2.1.0, tslib@^2.3.0:
+tslib@2.4.0, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==

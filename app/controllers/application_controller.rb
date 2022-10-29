@@ -22,6 +22,6 @@ class ApplicationController < ActionController::API
 
   def page_setting
     @page = params[:page] || 1
-    @per = params[:per] || 10
+    @per = params[:per] || 12
   end
 end

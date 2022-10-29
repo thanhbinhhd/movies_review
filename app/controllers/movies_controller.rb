@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
 
   def index
     movies = if params[:search]
-               Movie.where("name LIKE ?%#{Movie.sanitize_sql_like(params[:search])}%").page(@page).per(@per)
+               Movie.where("name LIKE ?%#{Movie.sanitize_sql_like(params[:search])}%")
              else
                Movie.order(:name).page(@page).per(@per)
              end
