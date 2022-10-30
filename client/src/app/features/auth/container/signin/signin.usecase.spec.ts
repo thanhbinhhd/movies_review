@@ -1,26 +1,35 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
+import { of, skip } from 'rxjs';
 import { AuthApi } from 'src/app/api/auth';
-import { AppGlobalStore } from 'src/app/shared/app.store';
 import { SignInParams } from 'src/app/shared/movie/domain/auth';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Action } from '@ngrx/store';
 import { SigninUsecase } from './signin.usecase';
+import { actions } from 'src/app/shared/app.store';
 
 describe('SigninUsecase', () => {
-  let globalStore: AppGlobalStore;
   let usecase: SigninUsecase;
   let api: AuthApi;
+  let store$: MockStore<{}>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [AppGlobalStore, SigninUsecase],
+      providers: [
+        SigninUsecase,
+        provideMockStore({
+          initialState: {
+            loggedInState: true,
+          },
+        }),
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
-    globalStore = TestBed.inject(AppGlobalStore);
     usecase = TestBed.inject(SigninUsecase);
     api = TestBed.inject(AuthApi);
+    store$ = TestBed.inject(MockStore);
   });
 
   it('should be created', () => {
@@ -33,12 +42,17 @@ describe('SigninUsecase', () => {
         username: 'username',
         password: 'password',
       };
-      spyOn(api, 'signIn').and.returnValue(of({ username: 'username' }));
+      spyOn(api, 'signIn').and.returnValue(
+        of({ user: { username: 'username' } })
+      );
+      const setLoggedInStateAction = actions.setLoggedInState();
+      const runActions: Action[] = [];
+      store$.scannedActions$
+        .pipe(skip(1))
+        .subscribe((action) => runActions.push(action as Action));
 
       await usecase.signIn(userParams);
-      globalStore.currentUser$.subscribe((value) => {
-        expect(value).toEqual('username');
-      });
+      expect(runActions).toEqual([setLoggedInStateAction]);
     });
   });
 });

@@ -1,23 +1,21 @@
-import { TestBed } from '@angular/core/testing';
-import { AppGlobalStore } from './app.store';
+import { selectApp, appReducer, actions, State } from './app.store';
 
-describe('AppGlobalStore', () => {
-  let store: AppGlobalStore;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [AppGlobalStore],
+describe('App reducer', () => {
+  it('action type: setLoggedInState', () => {
+    const state: State = {
+      loggedInState: false,
+    };
+    expect(appReducer(state, actions.setLoggedInState())).toEqual({
+      loggedInState: true,
     });
-    store = TestBed.inject(AppGlobalStore);
   });
 
-  describe('setCurrentUser', () => {
-    it('setMovieList をアップデートすること', () => {
-      const currentUser = 'user name';
-      store.setCurrentUser(currentUser);
-      store.currentUser$.subscribe((value) => {
-        expect(value).toEqual(currentUser);
-      });
+  it('action type: resetLoggedInState', () => {
+    const state: State = {
+      loggedInState: true,
+    };
+    expect(appReducer(state, actions.resetLoggedInState())).toEqual({
+      loggedInState: false,
     });
   });
 });

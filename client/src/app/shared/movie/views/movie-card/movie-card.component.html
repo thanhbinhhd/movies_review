@@ -16,8 +16,10 @@
         </div>
       </div>
     </div>
-    <div class="icon text-danger">
-      <fa-icon class="fa-2xl" [icon]="['far', 'heart']"></fa-icon>
-    </div>
+    <ng-container *ngIf="currentUser$ | async">
+      <div class="icon text-danger">
+        <fa-icon class="fa-2xl" [icon]="['far', 'heart']"></fa-icon>
+      </div>
+    </ng-container>
   </div>
 </ng-container>

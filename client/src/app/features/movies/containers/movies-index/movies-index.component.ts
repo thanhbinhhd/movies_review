@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest } from 'rxjs';
 import { MoviesIndexStore } from './movies-index.store';
 import { MoviesIndexUsecase } from './movies-index.usecase';
 

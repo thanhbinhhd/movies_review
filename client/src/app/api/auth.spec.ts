@@ -37,12 +37,12 @@ describe('AuthApi', () => {
       };
 
       api.signIn(userParams).subscribe((data) => {
-        expect(data).toEqual({ username: 'username' });
+        expect(data).toEqual({ user: { username: 'username' } });
       });
 
       const req = httpTestingController.expectOne(`${apiUrl}/login`);
       expect(req.request.method).toEqual('POST');
-      req.flush({ username: 'username' });
+      req.flush({ user: { username: 'username' } });
     });
   });
 });

@@ -2,24 +2,21 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { AuthApi } from 'src/app/api/auth';
-import { AppGlobalStore } from 'src/app/shared/app.store';
-import { SigninResponse } from 'src/app/shared/domain';
 import { SignInParams } from 'src/app/shared/movie/domain/auth';
-
+import { actions } from 'src/app/shared/app.store';
+import { Store } from '@ngrx/store';
 @Injectable()
 export class SigninUsecase {
   constructor(
     private readonly authApi: AuthApi,
     private readonly router: Router,
-    private readonly globalStore: AppGlobalStore
+    private readonly store: Store<{}>
   ) {}
 
   async signIn(params: SignInParams): Promise<void> {
     try {
-      const currentUser: SigninResponse = await lastValueFrom(
-        this.authApi.signIn(params)
-      );
-      this.globalStore.setCurrentUser(currentUser.username);
+      await lastValueFrom(this.authApi.signIn(params));
+      this.store.dispatch(actions.setLoggedInState());
       this.router.navigateByUrl('');
     } catch (e) {}
   }
