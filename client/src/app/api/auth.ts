@@ -14,9 +14,7 @@ export class AuthApi {
     return this.http.post<SigninResponse>(`${apiUrl}/login`, { user: params });
   }
 
-  // FIXME:テストを追加する
-  /* istanbul ignore next */
   signOut(): Observable<void> {
-    return this.http.post<void>(`${apiUrl}/logout`, null);
+    return this.http.delete<void>(`${apiUrl}/logout`);
   }
 }

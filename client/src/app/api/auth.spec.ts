@@ -29,8 +29,8 @@ describe('AuthApi', () => {
     expect(api).toBeTruthy();
   });
 
-  describe('getMoviesList', () => {
-    it('映画一覧を返すこと', () => {
+  describe('signIn', () => {
+    it('ログインできること', () => {
       const userParams: SignInParams = {
         username: 'username',
         password: 'password',
@@ -43,6 +43,14 @@ describe('AuthApi', () => {
       const req = httpTestingController.expectOne(`${apiUrl}/login`);
       expect(req.request.method).toEqual('POST');
       req.flush({ user: { username: 'username' } });
+    });
+  });
+
+  describe('signOut', () => {
+    it('ログアウトできること', () => {
+      api.signOut().subscribe();
+      const req = httpTestingController.expectOne(`${apiUrl}/logout`);
+      expect(req.request.method).toEqual('DELETE');
     });
   });
 });

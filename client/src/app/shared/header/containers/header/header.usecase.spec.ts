@@ -6,11 +6,11 @@ import { AuthApi } from 'src/app/api/auth';
 import { SignInParams } from 'src/app/shared/movie/domain/auth';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Action } from '@ngrx/store';
-import { SigninUsecase } from './signin.usecase';
 import { actions } from 'src/app/shared/app.store';
+import { HeaderUsecase } from './header.usecase';
 
 describe('SigninUsecase', () => {
-  let usecase: SigninUsecase;
+  let usecase: HeaderUsecase;
   let api: AuthApi;
   let store$: MockStore<{}>;
 
@@ -18,7 +18,7 @@ describe('SigninUsecase', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [
-        SigninUsecase,
+        HeaderUsecase,
         provideMockStore({
           initialState: {
             loggedInState: true,
@@ -27,7 +27,7 @@ describe('SigninUsecase', () => {
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
-    usecase = TestBed.inject(SigninUsecase);
+    usecase = TestBed.inject(HeaderUsecase);
     api = TestBed.inject(AuthApi);
     store$ = TestBed.inject(MockStore);
   });
@@ -36,23 +36,17 @@ describe('SigninUsecase', () => {
     expect(usecase).toBeTruthy();
   });
 
-  describe('signIn', () => {
-    it('ログインできて、Store の loggedInState を保存すること', async () => {
-      const userParams: SignInParams = {
-        username: 'username',
-        password: 'password',
-      };
-      spyOn(api, 'signIn').and.returnValue(
-        of({ user: { username: 'username' } })
-      );
-      const setLoggedInStateAction = actions.setLoggedInState();
+  describe('signOut', () => {
+    it('ログアウトできて、Store の loggedInState を削除すること', async () => {
+      spyOn(api, 'signOut');
+      const resetLoggedInStateAction = actions.resetLoggedInState();
       const runActions: Action[] = [];
       store$.scannedActions$
         .pipe(skip(1))
         .subscribe((action) => runActions.push(action as Action));
 
-      await usecase.signIn(userParams);
-      expect(runActions).toEqual([setLoggedInStateAction]);
+      await usecase.signOut();
+      expect(runActions).toEqual([resetLoggedInStateAction]);
     });
   });
 });

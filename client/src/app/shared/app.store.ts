@@ -27,10 +27,18 @@ export const actions = {
   resetLoggedInState,
 };
 
+// FIXME: 実は localStorage が不要ですが、@ngrx/store がうまく動けていないから、追加しました
+// 後で削除する
 const appStoreReducer = createReducer(
   initState,
-  on(setLoggedInState, (state) => ({ ...state, loggedInState: true })),
-  on(resetLoggedInState, (state) => ({ ...state, loggedInState: false }))
+  on(setLoggedInState, (state) => {
+    localStorage.setItem('loggedInState', 'true');
+    return { ...state, loggedInState: true };
+  }),
+  on(resetLoggedInState, (state) => {
+    localStorage.removeItem('loggedInState');
+    return { ...state, loggedInState: false };
+  })
 );
 
 export function appReducer(state: State | undefined, action: Action) {
@@ -43,5 +51,6 @@ export const selectApp = createSelector(
   selectAppStore,
   // FIXME:テストを追加する
   /* istanbul ignore next */
-  (state) => state.loggedInState
+  (state) =>
+    localStorage.getItem('loggedInState') ? true : state.loggedInState
 );

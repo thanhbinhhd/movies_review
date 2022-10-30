@@ -9,9 +9,10 @@ import { AuthModule } from './features/auth/auth.module';
 import { AuthCredentialInterceptor } from './http-interceptor';
 import { SearchMoviesComponent } from './features/movies/containers/search-movies/search-movies.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './shared/header/containers/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchMoviesComponent],
+  declarations: [AppComponent, SearchMoviesComponent, HeaderComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
