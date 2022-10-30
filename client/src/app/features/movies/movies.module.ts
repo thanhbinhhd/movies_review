@@ -6,6 +6,8 @@ import { SharedModule } from '../../shared/movie/shared.module';
 import { MoviesListRoutingModule } from './movies-routing.module';
 import { FavoritedMoviesPageComponent } from './pages/favorited-movies/favorited-movies.component';
 import { FavoritedMoviesComponent } from './containers/favorited-movies/favorited-movies.component';
+import { MovieDetailPageComponent } from './pages/movie-detail/movie-detail.component';
+import { MovieDetailComponent } from './containers/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { FavoritedMoviesComponent } from './containers/favorited-movies/favorite
     MoviesIndexComponent,
     FavoritedMoviesPageComponent,
     FavoritedMoviesComponent,
+    MovieDetailPageComponent,
+    MovieDetailComponent,
   ],
   imports: [CommonModule, SharedModule, MoviesListRoutingModule],
 })

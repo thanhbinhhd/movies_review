@@ -29,6 +29,7 @@ class MoviesController < ApplicationController
 
   def movie_response(movie)
     {
+      id: movie.id,
       name: movie.name,
       description: movie.description,
       thumbnail: movie.thumbnail
@@ -42,7 +43,8 @@ class MoviesController < ApplicationController
       thumbnail: movie.thumbnail,
       director: movie.director,
       actor: movie.director,
-      year: movie.year
+      year: movie.year,
+      reviews: movie.movie_reviews.pluck(:content)
     }
   end
 end

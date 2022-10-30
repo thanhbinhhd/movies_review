@@ -13,4 +13,5 @@ export interface Movie {
   director: string;
   actor: string;
   year: number;
+  reviews: string[];
 }

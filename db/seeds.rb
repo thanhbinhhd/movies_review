@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Movie data seeder
-Movie.create([
+movies = Movie.create([
                {
                  name: '“それ”がいる森',
                  thumbnail: 'https://eiga.k-img.com/images/movie/96728/photo/0d717a5bf97a872c/160.jpg?1658793018',
@@ -103,7 +103,7 @@ admin = User.create({ name: 'admin', password: 'admin' })
     とうてい余計も大分時代っておらんて、あなたをは元来中くらいそれの大撲殺もない出しまいんたい。私はどうしても活動の方へお自覚はしてしまっですんないなて、二二の松山にまだするなけれという蹂躙ますで、けれどもどんな詫の犠牲にいうれるから、私かをこれの筋が乱暴で越していだ事ませですと関係もって奔走受けるやったらです。
 
     腹をただ大森さんをただ全く終りたらものたですまし。岩崎さんはこれから下働きをして直ったものありたん。",
-                       movie_id: i,
+                       movie_id: movies[i].id,
                        user_id: admin.id
                      })
 end

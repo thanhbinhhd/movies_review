@@ -1,6 +1,7 @@
 <ng-container *ngIf="movie">
-  <div class="col">
+  <div class="col movie-card">
     <div
+      routerLink="/movies/{{ movie.id }}"
       class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
       [ngStyle]="{
         'background-image': 'url(' + movie.thumbnail + ')',
@@ -11,10 +12,12 @@
         <div class="pt-5 mt-5 display-7 lh-1 fw-bold">
           <div class="px-3 py-2 bg-secondary bg-opacity-50">
             <h4>{{ movie.name }}</h4>
-            <fa-icon class="fa-2xl" [icon]="['far', 'heart']"></fa-icon>
           </div>
         </div>
       </div>
+    </div>
+    <div class="icon text-danger">
+      <fa-icon class="fa-2xl" [icon]="['far', 'heart']"></fa-icon>
     </div>
   </div>
 </ng-container>

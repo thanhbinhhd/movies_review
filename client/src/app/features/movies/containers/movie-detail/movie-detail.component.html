@@ -1,0 +1,43 @@
+<ng-container *ngIf="movieDetail$ | async as movie; else movieNotFound">
+  <div class="row mb-2">
+    <div class="col-md-4">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <img [src]="movie.thumbnail" alt="映画の画像" />
+        <div class="p-3 bg-white">
+          <h3>{{ movie.name }}</h3>
+          <div>
+            <span class="fw-bold fs-4">監督：</span>
+            {{ movie.director }}
+          </div>
+          <div>
+            <span class="fw-bold fs-4">キャスト：</span>
+            {{ movie.actor }}
+          </div>
+          <div>
+            <span class="fw-bold fs-4">製造年：</span>
+            {{ movie.year }}
+          </div>
+          <div>
+            <span class="fw-bold fs-4">概要：</span>
+            {{ movie.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <ng-container *ngFor="let review of movie.reviews">
+        <div class="border rounded overflow-hidden shadow-sm p-4 bg-light">
+          {{ review }}
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #movieNotFound>
+  <div class="text-center fs-3 text">
+    映画を見つけませんでした。もう一度試してください。
+  </div>
+</ng-template>
