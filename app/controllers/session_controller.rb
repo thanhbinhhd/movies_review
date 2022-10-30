@@ -22,7 +22,7 @@ class SessionController < ApplicationController
 
     render json: {
       message: 'Logout'
-    }
+    }, status: :found
   end
 
   def logged_in?

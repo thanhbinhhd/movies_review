@@ -40,6 +40,15 @@ module MlBackendTestThanhbinhhd
     config.api_only = true
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://ml-test-thanhbinh.lvh.me:4200'
+        resource '*',
+                 headers: :any,
+                 methods: %i[get post delete options head],
+                 credentials: true
+      end
+    end
     config.generators do |g|
       g.test_framework :rspec
     end

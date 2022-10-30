@@ -1,0 +1,13 @@
+<ng-container *ngIf="moviesList$ | async as moviesList; else movieNotFound">
+  <ng-container *ngIf="moviesList.length > 0; else movieNotFound">
+    <app-movies-list
+      [movies]="moviesList"
+      (addFavorite)="addFavoriteClicked($event)"
+    ></app-movies-list>
+  </ng-container>
+</ng-container>
+<ng-template #movieNotFound>
+  <div class="text-center fs-3 text">
+    映画を見つけませんでした。もう一度試してください。
+  </div>
+</ng-template>

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
   post 'favorites/:id', to: 'favorites#add_favorite'
   post 'login', to: 'session#login'
-  post 'logout', to: 'session#logout'
+  delete 'logout', to: 'session#logout'
   post 'is_login', to: 'session#logged_in?'
 end
