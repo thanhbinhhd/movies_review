@@ -7,15 +7,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthModule } from './features/auth/auth.module';
 import { AuthCredentialInterceptor } from './http-interceptor';
+import { SearchMoviesComponent } from './features/movies/containers/search-movies/search-movies.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SearchMoviesComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
     AuthModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

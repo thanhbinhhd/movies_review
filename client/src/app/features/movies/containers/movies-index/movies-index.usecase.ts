@@ -16,4 +16,11 @@ export class MoviesIndexUsecase {
       this.store.setMovieList(movies);
     } catch (e) {}
   }
+
+  async searchMovies(searchKey: string): Promise<void> {
+    try {
+      const movies = await lastValueFrom(this.movieApi.searchMovies(searchKey));
+      this.store.setMovieList(movies);
+    } catch (e) {}
+  }
 }

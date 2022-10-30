@@ -49,4 +49,29 @@ describe('MoviesIndexUsecase', () => {
       });
     });
   });
+
+  describe('searchMovies', () => {
+    it('映画一覧を取得してから、Storeに保存すること', async () => {
+      const moviesList: MoviePreview[] = [
+        {
+          id: 1,
+          name: 'name 1',
+          description: 'description',
+          thumbnail: 'thumbnail.png',
+        },
+        {
+          id: 2,
+          name: 'name 1',
+          description: 'description',
+          thumbnail: 'thumbnail.png',
+        },
+      ];
+      spyOn(api, 'searchMovies').and.returnValue(of(moviesList));
+
+      await usecase.searchMovies('name');
+      store.moviesList$.subscribe((value) => {
+        expect(value).toEqual(moviesList);
+      });
+    });
+  });
 });
