@@ -42,7 +42,7 @@ module MlBackendTestThanhbinhhd
     config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://ml-test-thanhbinh.lvh.me:4200'
+        origins ENV.fetch('ALLOW_CORS_HOST', 'http://ml-test-thanhbinh.lvh.me:4200')
         resource '*',
                  headers: :any,
                  methods: %i[get post delete options head],
