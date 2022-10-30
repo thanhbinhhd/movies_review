@@ -8,6 +8,7 @@
 
 - yarn インストール
 - nodejs インストール
+- apiUrl 確認：[このファイル](./src/environments/environment.ts) の `apiUrl` 値はバックエンドの `DEV_SERVER_HOST` 値を同じことを確認
 
 ### Packages インストール
 
@@ -22,6 +23,14 @@ yarn start
 ```
 
 ファイルを変更する時、アップが自動でリーロードする
+
+### バックエンドを繋がって動作確認場合
+
+```
+yarn start --host ml-test-thanhbinh.lvh.me
+```
+
+上の host はバックエンドの `ALLOW_CORS_HOST` と同じです
 
 ### App をビルドする
 

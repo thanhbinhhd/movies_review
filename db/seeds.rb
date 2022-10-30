@@ -2,87 +2,87 @@
 
 # Movie data seeder
 movies = Movie.create([
-               {
-                 name: '“それ”がいる森',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96728/photo/0d717a5bf97a872c/160.jpg?1658793018',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2021,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'マイ・ブロークン・マリコ',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96450/photo/1844613d8a424af8/160.jpg?1660021008',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2022,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'アイ・アム まきもと',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96689/photo/5088c7dfa2e001e4/160.jpg?1655296874',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2020,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'まだまだ序章',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96862/photo/889248fc11fcfbff/160.jpg?1661989480',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2021,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'もっと超越した所へ',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96022/photo/e5634eddb8c39a9f/320.jpg?1662974442',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2021,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: '“それ”がいる森2',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/95577/photo/ac8d356527a454e4/320.jpg?1660264018',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2021,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'マイ・ブロークン・マリコ2',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96903/photo/be97daa4240fb283/320.jpg?1661386593',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2022,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'アイ・アム まきもと2',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/95392/photo/228ede61f7070384/320.jpg?1655338620',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2020,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'まだまだ序章2',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/96234/photo/0f7cea36022494be/320.jpg?1659601834',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2021,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               },
-               {
-                 name: 'もっと超越した所へ2',
-                 thumbnail: 'https://eiga.k-img.com/images/movie/95719/photo/4bf1e5c0e0fe6df4/320.jpg?1653981022',
-                 director: 'タイン　ビン',
-                 actor: 'タイン、ビン、レ',
-                 year: 2021,
-                 description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
-               }
-             ])
+                        {
+                          name: '“それ”がいる森',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96728/photo/0d717a5bf97a872c/160.jpg?1658793018',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2021,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'マイ・ブロークン・マリコ',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96450/photo/1844613d8a424af8/160.jpg?1660021008',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2022,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'アイ・アム まきもと',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96689/photo/5088c7dfa2e001e4/160.jpg?1655296874',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2020,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'まだまだ序章',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96862/photo/889248fc11fcfbff/160.jpg?1661989480',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2021,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'もっと超越した所へ',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96022/photo/e5634eddb8c39a9f/320.jpg?1662974442',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2021,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: '“それ”がいる森2',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/95577/photo/ac8d356527a454e4/320.jpg?1660264018',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2021,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'マイ・ブロークン・マリコ2',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96903/photo/be97daa4240fb283/320.jpg?1661386593',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2022,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'アイ・アム まきもと2',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/95392/photo/228ede61f7070384/320.jpg?1655338620',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2020,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'まだまだ序章2',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/96234/photo/0f7cea36022494be/320.jpg?1659601834',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2021,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        },
+                        {
+                          name: 'もっと超越した所へ2',
+                          thumbnail: 'https://eiga.k-img.com/images/movie/95719/photo/4bf1e5c0e0fe6df4/320.jpg?1653981022',
+                          director: 'タイン　ビン',
+                          actor: 'タイン、ビン、レ',
+                          year: 2021,
+                          description: '私は一遍どうもその講演人というのの時に思いないた。もっとも今を出入りめはもっとそんな安心たんまでを留めてくれましをは使用突き破るたでから、とてもにも起るですだですです。'
+                        }
+                      ])
 
 # User data seeder
 5.times do |i|
