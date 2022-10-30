@@ -18,7 +18,11 @@
     </div>
     <ng-container *ngIf="currentUser$ | async">
       <div class="icon text-danger">
-        <fa-icon class="fa-2xl" [icon]="['far', 'heart']"></fa-icon>
+        <fa-icon
+          class="fa-2xl"
+          [icon]="['far', 'heart']"
+          (click)="clickFavorite(movie.id)"
+        ></fa-icon>
       </div>
     </ng-container>
   </div>

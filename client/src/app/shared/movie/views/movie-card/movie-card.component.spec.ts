@@ -28,4 +28,12 @@ describe('MovieCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('clickFavorite', () => {
+    it('addFavorite を emit すること', () => {
+      spyOn(component.addFavorite, 'emit');
+      component.clickFavorite(1);
+      expect(component.addFavorite.emit).toHaveBeenCalledWith(1);
+    });
+  });
 });

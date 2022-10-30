@@ -1,6 +1,9 @@
 <ng-container *ngIf="moviesList$ | async as moviesList; else movieNotFound">
   <ng-container *ngIf="moviesList.length > 0; else movieNotFound">
-    <app-movies-list [movies]="moviesList"></app-movies-list>
+    <app-movies-list
+      [movies]="moviesList"
+      (addFavorite)="addFavoriteClicked($event)"
+    ></app-movies-list>
   </ng-container>
 </ng-container>
 <ng-template #movieNotFound>

@@ -30,6 +30,7 @@ class MockActivatedRoute {
 class MockMoviesIndexUsecase {
   getMovies() {}
   searchMovies() {}
+  addFavorite() {}
 }
 
 describe('MoviesIndexComponent', () => {
@@ -82,4 +83,12 @@ describe('MoviesIndexComponent', () => {
   //     expect(usecase.searchMovies).toHaveBeenCalled();
   //   });
   // });
+
+  describe('addFavoriteClicked', () => {
+    it('usecase の addFavorite メソッドを呼び出すこと', () => {
+      spyOn(usecase, 'addFavorite');
+      component.addFavoriteClicked(1);
+      expect(usecase.addFavorite).toHaveBeenCalled();
+    });
+  });
 });

@@ -19,4 +19,8 @@ export class FavoritedMoviesComponent implements OnInit {
   ngOnInit() {
     this.usecase.getMovies();
   }
+
+  addFavoriteClicked(movieId: number) {
+    this.usecase.addFavorite(movieId);
+  }
 }

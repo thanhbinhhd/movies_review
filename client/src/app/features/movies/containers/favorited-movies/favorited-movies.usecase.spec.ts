@@ -2,6 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+import { FavoritesApi } from 'src/app/api/favorites';
 import { MoviesApi } from 'src/app/api/movies';
 import { MoviePreview } from 'src/app/shared/movie/domain/movie';
 import { FavoritedMoviesStore } from './favorited-movies.store';
@@ -11,6 +12,7 @@ describe('FavoritedMoviesUsecase', () => {
   let store: FavoritedMoviesStore;
   let usecase: FavoritedMoviesUsecase;
   let api: MoviesApi;
+  let favoritesApi: FavoritesApi;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -21,6 +23,7 @@ describe('FavoritedMoviesUsecase', () => {
     store = TestBed.inject(FavoritedMoviesStore);
     usecase = TestBed.inject(FavoritedMoviesUsecase);
     api = TestBed.inject(MoviesApi);
+    favoritesApi = TestBed.inject(FavoritesApi);
   });
 
   it('should be created', () => {
@@ -49,6 +52,16 @@ describe('FavoritedMoviesUsecase', () => {
       store.moviesList$.subscribe((value) => {
         expect(value).toEqual(moviesList);
       });
+    });
+  });
+
+  describe('addFavorite', () => {
+    it('映画をブックマークするAPIを呼び出す', async () => {
+      const movieId = 1;
+      spyOn(favoritesApi, 'addFavorite');
+
+      await usecase.addFavorite(movieId);
+      expect(favoritesApi.addFavorite).toHaveBeenCalled();
     });
   });
 });

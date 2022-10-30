@@ -29,4 +29,8 @@ export class MoviesIndexComponent implements OnInit {
       }
     });
   }
+
+  async addFavoriteClicked(movieId: number) {
+    await this.usecase.addFavorite(movieId);
+  }
 }

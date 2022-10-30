@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
+import { FavoritesApi } from 'src/app/api/favorites';
 import { MoviesApi } from '../../../../api/movies';
 import { MoviesIndexStore } from './movies-index.store';
 
@@ -7,6 +8,7 @@ import { MoviesIndexStore } from './movies-index.store';
 export class MoviesIndexUsecase {
   constructor(
     private readonly movieApi: MoviesApi,
+    private readonly favoritesApi: FavoritesApi,
     private readonly store: MoviesIndexStore
   ) {}
 
@@ -21,6 +23,14 @@ export class MoviesIndexUsecase {
     try {
       const movies = await lastValueFrom(this.movieApi.searchMovies(searchKey));
       this.store.setMovieList(movies);
+    } catch (e) {}
+  }
+
+  async addFavorite(movieId: number): Promise<void> {
+    try {
+      const movies = await lastValueFrom(
+        this.favoritesApi.addFavorite(movieId)
+      );
     } catch (e) {}
   }
 }

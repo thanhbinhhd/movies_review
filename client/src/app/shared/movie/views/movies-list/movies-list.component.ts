@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MoviePreview } from '../../domain/movie';
 
 @Component({
@@ -9,4 +9,10 @@ import { MoviePreview } from '../../domain/movie';
 export class MoviesListComponent {
   @Input()
   movies: MoviePreview[] = [];
+  @Output()
+  addFavorite = new EventEmitter<number>();
+
+  addFavoriteClicked(movieId: number) {
+    this.addFavorite.emit(movieId);
+  }
 }

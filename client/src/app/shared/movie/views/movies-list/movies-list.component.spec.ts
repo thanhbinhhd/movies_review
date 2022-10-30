@@ -22,4 +22,12 @@ describe('MoviesListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('addFavoriteClicked', () => {
+    it('addFavorite を emit すること', () => {
+      spyOn(component.addFavorite, 'emit');
+      component.addFavoriteClicked(1);
+      expect(component.addFavorite.emit).toHaveBeenCalledWith(1);
+    });
+  });
 });
