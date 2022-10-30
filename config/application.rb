@@ -39,13 +39,15 @@ module MlBackendTestThanhbinhhd
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore,
+      key: '_cookie_name', path: '/', same_site: :None, secure: true
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'http://localhost:4200'
         resource '*',
                  headers: :any,
-                 methods: %i[get post delete options]
+                 methods: %i[get post delete options head],
+                 credentials: true
       end
     end
     config.generators do |g|

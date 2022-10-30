@@ -18,10 +18,10 @@ RSpec.describe 'Sessions', type: :request do
     end
   end
 
-  describe 'POST /logout' do
+  describe 'DELETE /logout' do
     it 'returns login success' do
-      post '/logout'
-      expect(response).to have_http_status(200)
+      delete '/logout'
+      expect(response).to have_http_status(302)
     end
   end
 
