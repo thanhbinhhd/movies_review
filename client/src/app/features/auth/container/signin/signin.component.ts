@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppGlobalStore } from 'src/app/shared/app.store';
 import { SignInParams } from 'src/app/shared/movie/domain/auth';
 import { SigninUsecase } from './signin.usecase';
 
@@ -7,7 +8,7 @@ import { SigninUsecase } from './signin.usecase';
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss'],
-  providers: [SigninUsecase],
+  providers: [SigninUsecase, AppGlobalStore],
 })
 export class SigninComponent {
   constructor(private usecase: SigninUsecase) {}

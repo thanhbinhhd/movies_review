@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SignInParams } from '../shared/movie/domain/auth';
-import { apiUrl } from '../shared/movie/domain/common';
+import { apiUrl, SigninResponse } from '../shared/domain';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,8 @@ import { apiUrl } from '../shared/movie/domain/common';
 export class AuthApi {
   constructor(private readonly http: HttpClient) {}
 
-  // FIXME:テストを追加する
-  /* istanbul ignore next */
-  signIn(params: SignInParams): Observable<void> {
-    return this.http.post<void>(`${apiUrl}/login`, { user: params });
+  signIn(params: SignInParams): Observable<SigninResponse> {
+    return this.http.post<SigninResponse>(`${apiUrl}/login`, { user: params });
   }
 
   // FIXME:テストを追加する

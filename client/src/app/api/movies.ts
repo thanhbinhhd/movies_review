@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { apiUrl } from '../shared/movie/domain/common';
+import { apiUrl } from '../shared/domain';
 import { Movie, MoviePreview } from '../shared/movie/domain/movie';
 
 @Injectable({

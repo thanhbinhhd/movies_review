@@ -4,7 +4,7 @@ import {
 } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { apiUrl } from '../shared/movie/domain/common';
+import { apiUrl } from '../shared/domain';
 import { MoviePreview } from '../shared/movie/domain/movie';
 import { MoviesApi } from './movies';
 
